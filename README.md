@@ -1,6 +1,6 @@
 # Ledger API — FastAPI + Supabase
 
-> GitHub: https://github.com/hongdw1126/ledger-api · Render: (배포 후 주소 입력)
+> GitHub: https://github.com/hongdw1126/ledger-api · Render: https://ledger-api-rj2q.onrender.com
 
 클라우드컴퓨팅실습 4주차 제출용 가계부 API입니다. FastAPI와 SQLAlchemy로 계좌, 카테고리, 거래를 관리하며 Supabase PostgreSQL에 데이터를 저장합니다.
 
@@ -36,4 +36,4 @@ uvicorn main:app --reload
 
 계좌와 거래를 분리해 하나의 계좌가 여러 거래를 가질 수 있는 1:N 관계로 모델링했습니다. SQLAlchemy 모델 클래스는 PostgreSQL 테이블과 대응하고, `ForeignKey`와 `relationship`이 이 관계를 표현합니다. 접속 문자열은 비밀번호가 포함된 비밀 정보이므로 `.env`와 Render 환경변수로 분리했습니다.
 
-AI에게 워크북 요구사항을 바탕으로 API 구조와 배포 설정의 누락 여부를 점검받았습니다. 로컬 SQLite에서 계좌·카테고리·거래 생성, 중첩 조회와 집계 처리 함수를 실행해 검증했습니다. Supabase 연결과 Render 배포 후 `/health`, `/docs` 확인은 아직 진행 전입니다.
+AI에게 워크북 요구사항을 바탕으로 API 구조와 배포 설정의 누락 여부를 점검받았습니다. 로컬 SQLite에서 계좌·카테고리·거래 생성, 중첩 조회와 집계 처리 함수를 실행해 검증했습니다. Render의 `/health`에서 PostgreSQL 연결을 확인했고, `/accounts`에서 계좌 3개를 조회했습니다.
