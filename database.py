@@ -8,7 +8,7 @@ load_dotenv()
 
 # SQLite makes local API verification possible.  Render must receive DATABASE_URL
 # as an environment variable so that it uses the Supabase PostgreSQL database.
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./ledger.db")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./ledger.db").strip()
 
 engine_options: dict = {"pool_pre_ping": True}
 if DATABASE_URL.startswith("sqlite"):
